@@ -2,9 +2,18 @@
 import { EventBus } from "../core/event-bus"
 import { SystemEventType } from "../core/events"
 
+interface OpenCodeEvent {
+  type: string
+  [key: string]: unknown
+}
+
+interface OpenCodeInput {
+  event: OpenCodeEvent
+}
+
 export function createOpenCodeAdapter(bus: EventBus) {
   return {
-    async event(input: any) {
+    async event(input: OpenCodeInput) {
       const event = {
         id: crypto.randomUUID(),
         timestamp: new Date().toISOString(),
