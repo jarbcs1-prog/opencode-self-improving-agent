@@ -1,5 +1,7 @@
 # OpenCode Self-Improving Orchestration Plugin
 
+[![CodeQL](https://github.com/jarbcs1-prog/opencode-self-improving-agent/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/jarbcs1-prog/opencode-self-improving-agent/actions/workflows/github-code-scanning/codeql)
+
 > **Disclaimer:** This plugin is not built by the OpenCode team and is not affiliated with OpenCode in any way. It is an independent community project.
 
 An OpenCode adaptive control layer that enables continuous self-evaluation, workflow improvement, task-boundary reflection, orchestration awareness, model delegation, evaluation-driven improvement, safe execution and persistent project intelligence.
