@@ -1,0 +1,28 @@
+system:
+  autonomy_level: "supervised"
+
+routing:
+  preferred_local_models: true
+  fallback_enabled: true
+
+verification:
+  required_for:
+    - code_changes
+    - filesystem_mutations
+    - configuration_changes
+
+reflection:
+  enabled: true
+  llm_enhanced: false
+
+memory:
+  backend: "filesystem"
+  retention_days: 90
+
+execution:
+  sandbox: "git-worktree"
+  max_concurrent_experiments: 3
+
+evaluation:
+  baseline_runs: 3
+  comparison_threshold: 0.05
