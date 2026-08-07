@@ -25,16 +25,17 @@ export async function runEvaluation(
       errors: result.stderr,
       metrics: { durationMs: Date.now() - started }
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const execError = error as { code?: number; stdout?: string; stderr?: string; message?: string };
     return {
       id: crypto.randomUUID(),
       proposalId,
       started: new Date().toISOString(),
       ended: new Date().toISOString(),
       status: "failed",
-      exitCode: error.code ?? -1,
-      output: error.stdout,
-      errors: error.stderr ?? error.message,
+      exitCode: execError.code ?? -1,
+      output: execError.stdout || "",
+      errors: (execError.stderr ?? execError.message) || "Unknown error",
       metrics: { durationMs: Date.now() - started, testsFailed: 1 }
     }
   }
