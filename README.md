@@ -1,5 +1,7 @@
 # OpenCode Self-Improving Orchestration Plugin
 
+> **Disclaimer:** This plugin is not built by the OpenCode team and is not affiliated with OpenCode in any way. It is an independent community project.
+
 An adaptive control layer that enables continuous self-evaluation, workflow improvement, task-boundary reflection, orchestration awareness, model delegation, evaluation-driven improvement, safe execution and persistent project intelligence for OpenCode.
 
 ## Overview
