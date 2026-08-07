@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { EventBus } from "../../src/core/event-bus"
-import { SystemEvent, SystemEventType } from "../../src/core/events"
+import { SystemEvent } from "../../src/core/events"
 
 describe("EventBus", () => {
   it("should publish events to subscribers", async () => {
