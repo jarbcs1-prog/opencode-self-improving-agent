@@ -1,6 +1,6 @@
 {
   "name": "opencode-self-improving-agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode Self-Improving Orchestration Plugin - An adaptive control layer for continuous self-evaluation, workflow improvement, and persistent project intelligence",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
