@@ -9,9 +9,9 @@ interface Skill {
   name: string
   version: string
   domain: string
-  knowledge: string      // Domain knowledge
-  procedure: string      // Step-by-step procedure
-  evaluation: string     // How to verify skill works
+  knowledge: string          // Domain knowledge
+  procedure: string          // Step-by-step procedure
+  evaluation: string         // How to verify skill works
   failure_history: string[]  // Known failure modes
 }
 ```
@@ -38,7 +38,7 @@ const registry = new AgentRegistry()
 registry.register({
   name: "database-expert",
   capabilities: ["sql_optimization", "schema_design", "migration_planning"],
-  model: "opencode-zen",
+  model: "mimo-v2.5-free",
   cost_multiplier: 1.2,
   reliability_score: 0.94,
   max_context: 100000,
@@ -102,7 +102,7 @@ Retired if superseded
 
 ## 6. Configuration for Custom Skills
 
-Add to `.opencode/self-improvement/config.yaml`:
+Add to `.opencode/opencode-self-improving-agent/config.yaml`:
 
 ```yaml
 skills:

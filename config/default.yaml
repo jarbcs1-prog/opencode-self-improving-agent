@@ -2,7 +2,7 @@ system:
   autonomy_level: "supervised"
 
 routing:
-  preferred_local_models: true
+  preferred_local_models: false
   fallback_enabled: true
 
 verification:
@@ -13,7 +13,7 @@ verification:
 
 reflection:
   enabled: true
-  llm_enhanced: false
+  llm_enhanced: true
 
 memory:
   backend: "filesystem"
@@ -26,3 +26,13 @@ execution:
 evaluation:
   baseline_runs: 3
   comparison_threshold: 0.05
+
+skills:
+  custom_registry: true
+  promotion_threshold:
+    success_rate: 0.85
+    max_regression: 0.05
+  domains:
+    - database
+    - security
+    - performance

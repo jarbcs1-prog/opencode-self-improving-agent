@@ -1,10 +1,8 @@
 # OpenCode Self-Improving Orchestration Plugin
 
-[![CodeQL](https://github.com/jarbcs1-prog/opencode-self-improving-agent/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/jarbcs1-prog/opencode-self-improving-agent/actions/workflows/github-code-scanning/codeql)
-
 > **Disclaimer:** This plugin is not built by the OpenCode team and is not affiliated with OpenCode in any way. It is an independent community project.
 
-An OpenCode adaptive control layer that enables continuous self-evaluation, workflow improvement, task-boundary reflection, orchestration awareness, model delegation, evaluation-driven improvement, safe execution and persistent project intelligence.
+An adaptive control layer that enables continuous self-evaluation, workflow improvement, task-boundary reflection, orchestration awareness, model delegation, evaluation-driven improvement, safe execution and persistent project intelligence for OpenCode.
 
 ## Overview
 
@@ -37,21 +35,21 @@ OpenCode → Adapter → Event Bus → Journal + Reflection
 ```bash
 # Install as OpenCode plugin
 mkdir -p .opencode/plugins
-cp -r dist/* .opencode/plugins/self-improvement/
+cp -r dist/* .opencode/plugins/opencode-self-improving-agent/
 # Or install globally
 npm install -g opencode-self-improving-agent
 ```
 
 ## Configuration
 
-Create `.opencode/self-improvement/config.yaml`:
+Create `.opencode/opencode-self-improving-agent/config.yaml`:
 
 ```yaml
 system:
   autonomy_level: "supervised"
 
 routing:
-  preferred_local_models: true
+  preferred_local_models: false
   fallback_enabled: true
 
 verification:
@@ -62,7 +60,7 @@ verification:
 
 reflection:
   enabled: true
-  llm_enhanced: false
+  llm_enhanced: true
 
 memory:
   backend: "filesystem"
@@ -134,9 +132,9 @@ The plugin works automatically once installed. No code changes required.
 
 To inspect learning state:
 ```bash
-cat .opencode/self-improvement/journal.jsonl
-cat .opencode/self-improvement/improvement-proposals.jsonl
-cat .opencode/self-improving-agent/promoted/guardrails/*.md
+cat .opencode/opencode-self-improving-agent/journal.jsonl
+cat .opencode/opencode-self-improving-agent/improvement-proposals.jsonl
+cat .opencode/opencode-self-improving-agent/promoted/guardrails/*.md
 ```
 
 ## Extension Points
@@ -149,7 +147,7 @@ const registry = new AgentRegistry()
 registry.register({
   name: "security-auditor",
   capabilities: ["security_audit", "vulnerability_scanning"],
-  model: "opencode-zen",
+  model: "big-pickle",
   cost_multiplier: 1.5,
   reliability_score: 0.98,
   max_context: 200000,

@@ -4,7 +4,7 @@ Complete configuration options for the OpenCode Self-Improving Agent plugin.
 
 ## Configuration File
 
-Location: `.opencode/self-improvement/config.yaml`
+Location: `.opencode/opencode-self-improving-agent/config.yaml`
 
 ## Schema
 
@@ -13,7 +13,7 @@ system:
   autonomy_level: "supervised"  # "supervised" | "autonomous"
 
 routing:
-  preferred_local_models: true
+  preferred_local_models: false
   fallback_enabled: true
 
 verification:
@@ -24,7 +24,7 @@ verification:
 
 reflection:
   enabled: true
-  llm_enhanced: false
+  llm_enhanced: true
 
 memory:
   backend: "filesystem"
@@ -78,7 +78,7 @@ Storage backend for persistent state. Currently only `filesystem` supported.
 
 ### memory.retention_days
 
-Days to retain journal, trajectories, and experiments before cleanup.
+Days to retain journal, trajectories and experiments before cleanup.
 
 ### execution.sandbox
 
@@ -102,8 +102,8 @@ Minimum improvement ratio (0.05 = 5%) required for promotion.
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `OPENCODE_PLUGIN_CONFIG` | Path to config file | `.opencode/self-improvement/config.yaml` |
-| `OPENCODE_SELF_IMPROVEMENT_DIR` | Base directory for plugin state | `.opencode/self-improvement` |
+| `OPENCODE_PLUGIN_CONFIG` | Path to config file | `.opencode/opencode-self-improving-agent/config.yaml` |
+| `OPENCODE_SELF_IMPROVEMENT_DIR` | Base directory for plugin state | `.opencode/opencode-self-improving-agent` |
 | `OPENCODE_EXPERIMENTS_DIR` | Directory for experiment worktrees | `.experiments` |
 
 ## Example: Production Configuration
@@ -113,7 +113,7 @@ system:
   autonomy_level: "supervised"
 
 routing:
-  preferred_local_models: true
+  preferred_local_models: false
   fallback_enabled: true
 
 verification:

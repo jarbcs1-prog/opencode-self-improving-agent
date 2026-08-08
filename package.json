@@ -2,32 +2,8 @@
   "name": "opencode-self-improving-agent",
   "version": "0.1.0",
   "description": "OpenCode Self-Improving Orchestration Plugin - An adaptive control layer for continuous self-evaluation, workflow improvement, and persistent project intelligence",
-  "keywords": [
-    "opencode",
-    "plugin",
-    "self-improvement",
-    "orchestration",
-    "reflection",
-    "evaluation"
-  ],
-  "homepage": "https://github.com/jarbcs1-prog/opencode-self-improving-agent#readme",
-  "bugs": {
-    "url": "https://github.com/jarbcs1-prog/opencode-self-improving-agent/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jarbcs1-prog/opencode-self-improving-agent.git"
-  },
-  "license": "MIT",
-  "author": "jarbcs1",
-  "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "directories": {
-    "doc": "docs",
-    "example": "examples",
-    "test": "tests"
-  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -37,24 +13,29 @@
     "format": "prettier --write src/**/*.ts",
     "prepare": "npm run build"
   },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "self-improvement",
+    "orchestration",
+    "reflection",
+    "evaluation"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "@opencode-ai/plugin": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
-    "@typescript-eslint/eslint-plugin": "^8.66.0",
-    "@typescript-eslint/parser": "^8.66.0",
-    "eslint": "^9.39.5",
-    "prettier": "^3.1.0",
     "typescript": "^5.3.0",
-    "typescript-eslint": "^8.66.0",
-    "vitest": "^4.1.10"
+    "vitest": "^1.0.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "prettier": "^3.1.0"
   },
   "engines": {
     "node": ">=20.0.0"
-  },
-  "allowScripts": {
-    "esbuild@0.21.5": true,
-    "msgpackr-extract@3.0.4": true
   }
 }

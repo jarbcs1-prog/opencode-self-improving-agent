@@ -10,6 +10,7 @@ export { createProposals, ImprovementProposal, ProposalCategory } from "../learn
 export { evaluatePromotion, PromotionDecision } from "../learning/promotion"
 export { runEvaluation } from "../evaluation/runner"
 export { EvaluationCase, EvaluationRun, EvaluationStatus } from "../evaluation/types"
+export { TaskRequest } from "../routing/schemas"
 export { createBaseline, Baseline } from "../evaluation/baseline"
 export { compare, Comparison } from "../evaluation/comparator"
 export { decide, Decision, DecisionAction } from "../evaluation/decision"

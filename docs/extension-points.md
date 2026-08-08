@@ -14,7 +14,7 @@ const registry = new AgentRegistry()
 registry.register({
   name: "security-auditor",
   capabilities: ["security_audit", "vulnerability_scanning", "threat_modeling"],
-  model: "opencode-zen",
+  model: "big-pickle",
   cost_multiplier: 1.5,
   reliability_score: 0.98,
   max_context: 200000,
@@ -24,7 +24,7 @@ registry.register({
 registry.register({
   name: "performance-engineer",
   capabilities: ["profiling", "optimization", "benchmarking"],
-  model: "local-llama",
+  model: "nemotron-3-ultra-free",
   cost_multiplier: 0.2,
   reliability_score: 0.85,
   max_context: 64000,
@@ -78,7 +78,7 @@ async function enhancedReflection(events: SystemEvent[]) {
   // Use LLM for deeper analysis
   const { text } = await generateText({
     model: yourModel,
-    prompt: `Analyze these events for friction, elegance, honesty, and unseen layers:
+    prompt: `Analyze these events for friction, elegance, honesty and unseen layers:
 ${JSON.stringify(events, null, 2)}
 
 Base reflection: ${JSON.stringify(base, null, 2)}
@@ -154,7 +154,7 @@ import { SandboxPolicy } from "opencode-self-improving-agent"
 
 const productionPolicy: SandboxPolicy = {
   allow_read: ["**"],
-  allow_write: [".experiments/**", ".opencode/self-improvement/**"],
+  allow_write: [".experiments/**", ".opencode/opencode-self-improving-agent/**"],
   allow_exec: [
     "npm test",
     "npm run build",

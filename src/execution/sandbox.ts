@@ -40,13 +40,12 @@ export class SandboxExecutor {
         exit_code: 0,
         duration_ms: Date.now() - start
       }
-    } catch (error: unknown) {
-      const execError = error as { stdout?: string; stderr?: string; code?: number; message?: string };
+    } catch (error: any) {
       return {
         success: false,
-        stdout: execError.stdout || "",
-        stderr: execError.stderr || execError.message || "Unknown error",
-        exit_code: execError.code || -1,
+        stdout: error.stdout || "",
+        stderr: error.stderr || error.message,
+        exit_code: error.code || -1,
         duration_ms: Date.now() - start
       }
     }

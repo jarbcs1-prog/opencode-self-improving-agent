@@ -1,10 +1,10 @@
 // Git Operations - Isolated git commands
-import { execFile } from "node:child_process"
+import { exec } from "node:child_process"
 import { promisify } from "node:util"
 
-const run = promisify(execFile)
+const run = promisify(exec)
 
-export async function git(args: string[], cwd: string) {
-  const result = await run("git", args, { cwd })
+export async function git(args: string, cwd: string) {
+  const result = await run(`git ${args}`, { cwd })
   return result.stdout.trim()
 }
